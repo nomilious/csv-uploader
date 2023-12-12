@@ -45,7 +45,7 @@ const MainScreen = ({ onFileLoad }) => {
     };
 
 
-    const handleButtonClick = (event) => {
+    const handleButtonClick = () => {
         if (fileInputRef.current) {
             const fileInput = fileInputRef.current;
             fileInput.click(); // Trigger the click event on the file input

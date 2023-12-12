@@ -16,7 +16,7 @@
 .app-viewer__table {
     align-self: flex-end;
     text-align: left;
-    border-radius: 10px 0px 0px 0px;
+    border-radius: 10px 0 0 0;
     background-color: white;
     border-collapse: collapse;
     width: 90%;

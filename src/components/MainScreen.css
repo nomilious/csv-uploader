@@ -11,7 +11,7 @@ body {
     background-color: white;
     border-radius: 10px;
     box-sizing: border-box;
-    box-shadow: 2px 4px 9.9px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.25);
     min-width: calc(var(--figma-form-width) / var(--figma-width) * 100vmax);
     min-height: calc(var(--figma-form-height) / var(--figma-height) * 100vmin);
 

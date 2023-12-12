@@ -34,7 +34,6 @@ function App() {
                 // Combine the parsed first part with the address
                 return [...firstPart, address];
             } else {
-                // TODO think
                 // If no quotes, split the row by commas directly
                 return row.split(',');
             }
