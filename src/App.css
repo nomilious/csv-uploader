@@ -1,3 +1,19 @@
+:root {
+    --button-color: #6346B4;
+    --dash-color: #AEAEAE;
+    --error-bg-color: #FF6565;
+    --background-color: #CBCBCB;
+
+    --figma-width: 1440;
+    --figma-height: 1024;
+    --figma-form-width: 823;
+    --figma-form-height: 367;
+
+    --figma-button-width: 274;
+    --figma-button-height: 48;
+    --figma-button-margin-top: 75;
+}
+
 .App {
     text-align: center;
 }

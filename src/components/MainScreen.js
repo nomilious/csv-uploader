@@ -54,26 +54,26 @@ const MainScreen = ({ onFileLoad }) => {
 
     return (
         <div
-            className={`container d-flex justify-content-center align-items-center vh-100`}
+            className={`app-main container d-flex justify-content-center align-items-center vh-100`}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
         >
-            <form className={`main-screen__form bg-white rounded d-flex justify-content-center align-items-center flex-column ${dragging ? 'drag-over' : ''}`}>
+            <form className={`app-main__form bg-white rounded d-flex justify-content-center align-items-center flex-column ${dragging ? 'drag-over' : ''}`}>
 
-                <h2 className="main-screen__header">{dragging ? "Перетащите файл в эту область" : "Выберите файл в формате CSV"}</h2>
+                <h2 className="app-main__header">{dragging ? "Перетащите файл в эту область" : "Выберите файл в формате CSV"}</h2>
                 <input
                     type="file"
                     onChange={(e) => handleFileSelect(e)}
-                    className="main-screen__input"
+                    className="app-main__input"
                     ref={fileInputRef}
                 />
                 {!dragging && (
-                    <button onClick={handleButtonClick} className="main-screen__button btn mt-5" type="button">
+                    <button onClick={handleButtonClick} className="app-main__btn btn mt-5" type="button">
                         Выберите файл
                     </button>
                 )}
-                {error && <p className="main-screen__error">{error}</p>}
+                {error && <p className="app-main__error">{error}</p>}
 
             </form>
         </div>

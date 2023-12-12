@@ -1,0 +1,81 @@
+:root {
+    --thead-border-bottom-color: #898989;
+    --other-case-border-color: #C0C0C0;
+    --button-color: #3366ff;
+}
+
+.app-viewer__table tr {
+    display: flex;
+}
+.app-viewer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.app-viewer__table {
+    align-self: flex-end;
+    text-align: left;
+    border-radius: 10px 0px 0px 0px;
+    background-color: white;
+    border-collapse: collapse;
+    width: 90%;
+    flex: 1;
+}
+
+.app-viewer__table th,
+.app-viewer__table td {
+    padding: 10px 10px 10px 20px;
+    font-weight: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+/*name*/
+.app-viewer__table th:nth-child(1),
+.app-viewer__table td:nth-child(1) {
+    flex: 4;
+}
+/*phone*/
+.app-viewer__table th:nth-child(2),
+.app-viewer__table td:nth-child(2) {
+    flex: 2;
+}
+.app-viewer__table th:nth-child(3),
+.app-viewer__table td:nth-child(3) {
+    flex: 3;
+}
+.app-viewer__table th:nth-child(4),
+.app-viewer__table td:nth-child(4) {
+    flex: 2;
+}
+/*address*/
+.app-viewer__table th:nth-child(5),
+.app-viewer__table td:nth-child(5) {
+    flex: 5;
+}
+
+.app-viewer__table th {
+    border-bottom: 2px solid var(--thead-border-bottom-color);
+    border-right: 1px solid var(--other-case-border-color);
+}
+
+.app-viewer__table td {
+    border-bottom: 1px solid var(--other-case-border-color);
+}
+
+.app-viewer__btn {
+    background-color: var(--button-color);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-right: 1%;
+
+    cursor: pointer;
+    margin-bottom: 2%;
+    padding: 8px 16px;
+
+}
