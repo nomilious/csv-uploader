@@ -11,6 +11,7 @@ const DataViewerScreen = ({data, onReset}) => {
 
     // return <thead>. if the velue of <th> was redifined in the ТЗ , use it
     const renderTableHeader = () => (
+        <thead>
         <tr>
             {data[0].map((value, key) => (
                 <th key={key}>
@@ -18,10 +19,11 @@ const DataViewerScreen = ({data, onReset}) => {
                 </th>
             ))}
         </tr>
+        </thead>
     );
     const renderTableBody = () => {
         return (
-            <>
+            <tbody>
             {data.slice(1).map((item, index) => (
                 <tr key={index}>
                     {Object.keys(item).map((field, idx) => (
@@ -31,7 +33,7 @@ const DataViewerScreen = ({data, onReset}) => {
                     ))}
                 </tr>
             ))}
-            </>
+            </tbody>
         );
     };
 

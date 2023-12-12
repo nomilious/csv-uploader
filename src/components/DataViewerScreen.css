@@ -65,7 +65,7 @@
 .app-viewer__table td {
     border-bottom: 1px solid var(--other-case-border-color);
 }
-.app-viewer__table tr:hover{
+.app-viewer__table tbody tr:not(:last-child):hover{
     background-color: var(--hover-color);
 }
 

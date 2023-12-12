@@ -3,8 +3,11 @@ body {
     font-family: 'Noto Sans', sans-serif !important;
 }
 
-.main {
-    text-align: center;
+.app-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .app-main__form {
@@ -14,12 +17,18 @@ body {
     box-shadow: 2px 4px 10px 0 rgba(0, 0, 0, 0.25);
     min-width: calc(var(--figma-form-width) / var(--figma-width) * 100vmax);
     min-height: calc(var(--figma-form-height) / var(--figma-height) * 100vmin);
-
+    transition: outline var(--animation-time) ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .app-main__header {
     font-weight: normal;
     margin: 0;
+    transition: color var(--animation-time) ease;
+
 }
 .app-main__input {
     display: none;
@@ -33,6 +42,8 @@ body {
     cursor: pointer;
     min-width: calc(var(--figma-button-width) / var(--figma-width) * 100vmax);
     min-height: calc(var(--figma-button-height) / var(--figma-height) * 100vmin);
+    margin-top: 5%;
+
 }
 
 .app-main__error {
