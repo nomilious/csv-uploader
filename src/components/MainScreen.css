@@ -1,0 +1,69 @@
+:root {
+    --button-color: #6346B4;
+    --dash-color: #AEAEAE;
+    --error-bg-color: #FF6565;
+    --background-color: #CBCBCB;
+
+    --figma-width: 1440;
+    --figma-height: 1024;
+    --figma-form-width: 823;
+    --figma-form-height: 367;
+
+    --figma-button-width: 274;
+    --figma-button-height: 48;
+    --figma-button-margin-top: 75;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Noto Sans', sans-serif !important;
+}
+
+.main {
+    text-align: center;
+}
+
+.main-screen__form {
+    background-color: white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 2px 4px 9.9px 0px rgba(0, 0, 0, 0.25);
+    min-width: calc(var(--figma-form-width) / var(--figma-width) * 100vmax);
+    min-height: calc(var(--figma-form-height) / var(--figma-height) * 100vmin);
+
+}
+
+.main-screen__header {
+    font-weight: normal;
+    margin: 0;
+}
+.main-screen__input {
+    display: none;
+}
+.main-screen__button {
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: calc(var(--figma-button-width) / var(--figma-width) * 100vmax);
+    min-height: calc(var(--figma-button-height) / var(--figma-height) * 100vmin);
+}
+
+.main-screen__error {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--error-bg-color);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    z-index: 1;
+}
+.drag-over {
+    outline: 5px dashed var(--dash-color);
+    outline-offset: -15px;
+    color: var(--dash-color);
+}
