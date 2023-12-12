@@ -1,11 +1,19 @@
 import MainScreen from "./components/MainScreen";
 import DataViewerScreen from "./components/DataViewerScreen";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import './App.css';
 
 function App() {
     const [data, setData] = useState(null);
     //TODO add "loading state" while transforming text and reading csv
+
+
+    useEffect(() => {
+        const savedData = localStorage.getItem('data');
+        if (savedData) {
+            setData(JSON.parse(savedData));
+        }
+    }, []);
 
     const transformText = (text) => {
         // split by new line
@@ -64,9 +72,11 @@ function App() {
             const decoder = new TextDecoder('windows-1251');
             const text = decoder.decode(arrayBuffer);
 
-            const res = transformText(text);
+            const transformedText = transformText(text);
 
-            setData(transformText(text));
+            setData(transformedText);
+            // "upload" to localStorage
+            localStorage.setItem('data', JSON.stringify(transformedText));
         }
         reader.readAsArrayBuffer(file);
     };
@@ -74,18 +84,23 @@ function App() {
     // used in DataViewerScreen
     const handleReset = () => {
         setData(null);
+        localStorage.removeItem('data');
     };
 
     // if file not chosen => MainScreen, else DataViewerScreen
-    return (
-        <div className="App">
-            {data ? (
+    if (data) {
+        return (
+            <div className="app">
                 <DataViewerScreen data={data} onReset={handleReset} />
-            ) : (
+            </div>
+        );
+    } else {
+        return (
+            <div className="app">
                 <MainScreen onFileLoad={handleFileLoad} />
-            )}
-        </div>
-    );
+            </div>
+        );
+    }
 }
 
 export default App;
