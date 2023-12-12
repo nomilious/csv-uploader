@@ -38,7 +38,7 @@ const DataViewerScreen = ({data, onReset}) => {
 
     return (
         <div className="app-viewer">
-            <button className="app-viewer__btn" onClick={onReset}>Загрузить новый файл</button>
+            <button className="app-viewer__btn main-btn" onClick={onReset}>Загрузить новый файл</button>
             <table className="app-viewer__table">
                 {renderTableHeader()}
                 {renderTableBody()}

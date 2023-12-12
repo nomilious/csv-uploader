@@ -1,5 +1,7 @@
 :root {
-    --button-color: #6346B4;
+    --default-colorr: #6346B4;
+    --hover-color: #A88EF0;
+    --active-color: #311F63;
     --dash-color: #AEAEAE;
     --error-bg-color: #FF6565;
     --background-color: #CBCBCB;
@@ -12,10 +14,19 @@
     --figma-button-width: 274;
     --figma-button-height: 48;
     --figma-button-margin-top: 75;
+    --animation-time: 0.3s;
 }
 
-.App {
-    text-align: center;
+.main-btn {
+    background-color: var(--default-colorr);
+    transition: background-color var(--animation-time) ease;
+
+}
+.main-btn:hover {
+    background-color: var(--hover-color);
+}
+.main-btn:active {
+    background-color: var(--active-color);
 }
 
 .App-logo {

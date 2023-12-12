@@ -69,7 +69,7 @@ const MainScreen = ({ onFileLoad }) => {
                     ref={fileInputRef}
                 />
                 {!dragging && (
-                    <button onClick={handleButtonClick} className="app-main__btn btn mt-5" type="button">
+                    <button onClick={handleButtonClick} className="app-main__btn main-btn mt-5" type="button">
                         Выберите файл
                     </button>
                 )}

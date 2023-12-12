@@ -25,7 +25,7 @@ body {
     display: none;
 }
 .app-main__btn {
-    background-color: var(--button-color);
+    background-color: var(--default-colorr);
     color: white;
     border: none;
     padding: 8px 16px;

@@ -1,11 +1,11 @@
 :root {
     --thead-border-bottom-color: #898989;
     --other-case-border-color: #C0C0C0;
-    --button-color: #3366ff;
 }
 
 .app-viewer__table tr {
     display: flex;
+    transition: background-color var(--animation-time) ease;
 }
 .app-viewer {
     display: flex;
@@ -65,9 +65,11 @@
 .app-viewer__table td {
     border-bottom: 1px solid var(--other-case-border-color);
 }
+.app-viewer__table tr:hover{
+    background-color: var(--hover-color);
+}
 
 .app-viewer__btn {
-    background-color: var(--button-color);
     border: none;
     color: white;
     border-radius: 5px;
