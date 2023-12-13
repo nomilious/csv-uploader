@@ -91,9 +91,6 @@ describe("testing MainScreen functionality", ()=> {
         render(<MainScreen onFileLoad={onFileLoadMock} />);
 
         const formElement = screen.getByTestId('app-main__form');
-        const h2Element = screen.getByRole('heading', {
-            name: 'Выберите файл в формате CSV',
-        });
 
         // Simulate drag enter event
         fireEvent.drop(formElement, { dataTransfer: { files: [new File([], 'file.csv')] } });
