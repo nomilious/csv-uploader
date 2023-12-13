@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import "./MainScreen.css";
+import {Link} from "react-router-dom";
 
 
 const MainScreen = ({ onFileLoad }) => {
@@ -62,6 +63,7 @@ const MainScreen = ({ onFileLoad }) => {
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
         >
+
             <form data-testid="app-main__form" className={`app-main__form  ${dragging ? 'drag-over' : ''}`}>
                 <h2 className="app-main__header">{dragging ? "Перетащите файл в эту область" : "Выберите файл в формате CSV"}</h2>
                 {/*hidden by default*/}

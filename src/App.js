@@ -3,9 +3,12 @@ import DataViewerScreen from "./components/DataViewer";
 import {useEffect, useState} from "react";
 import './App.css';
 import transformText from "./utils/csvUtils";
+import {BrowserRouter as Router, Route, Routes, useNavigate} from 'react-router-dom';
+
 
 function App() {
     const [data, setData] = useState(null);
+    const navigate  = useNavigate();
     //TODO add "loading state" while transforming text and reading csv
 
 
@@ -38,6 +41,8 @@ function App() {
             // upload to localStorage
             localStorage.setItem('data', JSON.stringify(transformedText));
 
+            // navigate
+            navigate('/data-viewer');
         }
         reader.readAsArrayBuffer(file);
     };
@@ -46,22 +51,24 @@ function App() {
     const handleReset = () => {
         setData(null);
         localStorage.removeItem('data');
+        navigate('/');
+
     };
 
     // if file not chosen => MainScreen, else DataViewerScreen
-    if (data) {
-        return (
-            <div className="app">
-                <DataViewerScreen data={data} onReset={handleReset} />
-            </div>
-        );
-    } else {
-        return (
-            <div className="app">
-                <MainScreen onFileLoad={handleFileLoad} />
-            </div>
-        );
-    }
+    return (
+        <div className="app">
+            <Routes>
+                {/* Render different components based on the condition */}
+                {data ? (
+                    <Route path="/data-viewer" element={<DataViewerScreen data={data} onReset={handleReset} />} />
+                ) : (
+                    <Route path="/" element={<MainScreen onFileLoad={handleFileLoad} />} />
+                )}
+            </Routes>
+        </div>
+    );
+
 }
 
 export default App;
