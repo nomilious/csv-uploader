@@ -57,7 +57,7 @@ DataViewerScreen.propTypes = {
 DataViewerScreen.defaultProps = {
     data: null,
     onReset: () => {
-        console.error("onReset not passed");
+        console.log("onReset not passed");
     },
 }
 export default DataViewerScreen;

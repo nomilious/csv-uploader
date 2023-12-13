@@ -6,8 +6,6 @@ const errorMsg = "Неправильный формат файла, разреш
 const selectFileMsg = 'Выберите файл';
 const consoleErrorMsg = "onFileLoad not passed";
 describe("testing MainScreen functionality", ()=> {
-    // mock представляет собой имитацию или замену реального объекта или функции в тестах.
-
     test('renders MainScreen component', () => {
         const onFileLoadMock = jest.fn();
         render(<MainScreen onFileLoad={onFileLoadMock} />)
@@ -118,4 +116,16 @@ describe("testing MainScreen functionality", ()=> {
         // Check if mock is not called(errormsg appears)
         expect(onFileLoadMock).toBeCalledTimes(0);
     })
+
+    test('has correct propTypes', () => {
+        expect(MainScreen.propTypes).toEqual({
+            onFileLoad: expect.any(Function),
+        });
+    });
+
+    test('has correct defaultProps', () => {
+        expect(MainScreen.defaultProps).toEqual({
+            onFileLoad: expect.any(Function),
+        });
+    });
 })
