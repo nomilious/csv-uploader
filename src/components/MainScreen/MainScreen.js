@@ -62,13 +62,13 @@ const MainScreen = ({ onFileLoad }) => {
             onDragLeave={handleDragLeave}
             onDrop={handleDrop}
         >
-            <form className={`app-main__form  ${dragging ? 'drag-over' : ''}`}>
-
+            <form data-testid="app-main__form" className={`app-main__form  ${dragging ? 'drag-over' : ''}`}>
                 <h2 className="app-main__header">{dragging ? "Перетащите файл в эту область" : "Выберите файл в формате CSV"}</h2>
                 {/*hidden by default*/}
                 <label htmlFor="fileInput" className="app-main__label">
                     Выбор файла
                 </label>
+                {/*hidden by default*/}
                 <input
                     id="fileInput"
                     type="file"
