@@ -1,5 +1,5 @@
 import MainScreen from "./components/MainScreen";
-import DataViewerScreen from "./components/DataViewerScreen";
+import DataViewerScreen from "./components/DataViewer";
 import {useEffect, useState} from "react";
 import './App.css';
 

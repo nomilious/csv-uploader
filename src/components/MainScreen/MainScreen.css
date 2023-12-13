@@ -30,7 +30,7 @@ body {
     transition: color var(--animation-time) ease;
 
 }
-.app-main__input {
+.app-main__input, .app-main__label {
     display: none;
 }
 .app-main__btn {

@@ -48,10 +48,13 @@ const MainScreen = ({ onFileLoad }) => {
     const handleButtonClick = () => {
         if (fileInputRef.current) {
             const fileInput = fileInputRef.current;
-            fileInput.click(); // Trigger the click event on the file input
+            // Trigger the click event on the file input
+            fileInput.click();
         }
     };
 
+    // center this form
+    // by clicking on button, we trigger the input.type=list click
     return (
         <div
             className={`app-main`}
@@ -63,10 +66,15 @@ const MainScreen = ({ onFileLoad }) => {
 
                 <h2 className="app-main__header">{dragging ? "Перетащите файл в эту область" : "Выберите файл в формате CSV"}</h2>
                 {/*hidden by default*/}
+                <label htmlFor="fileInput" className="app-main__label">
+                    Выбор файла
+                </label>
                 <input
+                    id="fileInput"
                     type="file"
                     onChange={(e) => handleFileSelect(e)}
                     className="app-main__input"
+                    placeholder="Choose File"
                     ref={fileInputRef}
                 />
                 {!dragging && (
@@ -86,7 +94,7 @@ MainScreen.propTypes = {
 };
 MainScreen.defaultProps = {
     onFileLoad: () => {
-        console.error("onFileLoad not passed");
+        console.log("onFileLoad not passed");
     },
 };
 
