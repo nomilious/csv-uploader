@@ -17,14 +17,19 @@ function App() {
     }, []);
 
     // used in MainScreen
-    const handleFileLoad = (file) =>{
+    const handleFileLoad =  (file) =>{
         const reader = new FileReader();
         reader.onload = function (e) {
             // Get the ArrayBuffer of the file content
             const arrayBuffer = e.target.result;
-
             // Decode using encoding windows-1251
             const decoder = new TextDecoder('windows-1251');
+            // try {
+            //     decoder = new TextDecoder('windows-1251');
+            //     // Your decoding logic here
+            // } catch (error) {
+            //     console.error('Error occurred during decoding:', error);
+            // }
             const text = decoder.decode(arrayBuffer);
 
             const transformedText = transformText(text);
@@ -32,6 +37,7 @@ function App() {
             setData(transformedText);
             // upload to localStorage
             localStorage.setItem('data', JSON.stringify(transformedText));
+
         }
         reader.readAsArrayBuffer(file);
     };
