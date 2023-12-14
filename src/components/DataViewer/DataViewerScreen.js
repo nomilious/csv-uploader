@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 import "./DataViewerScreen.css";
+import React from "react";
+
 const DataViewerScreen = ({data, onReset}) => {
     // redifined in ТЗ
     const redifinedHeader = {
@@ -11,29 +13,29 @@ const DataViewerScreen = ({data, onReset}) => {
 
     // return <thead>. if the velue of <th> was redifined in the ТЗ , use it
     const renderTableHeader = () => (
-        <thead>
-        <tr>
+        <>
+        <div className="table__row">
             {data[0].map((value, key) => (
-                <th key={key}>
+                <div className="table__head" key={key}>
                     {redifinedHeader[value] ? redifinedHeader[value] : value}
-                </th>
+                </div>
             ))}
-        </tr>
-        </thead>
+        </div>
+        </>
     );
     const renderTableBody = () => {
         return (
-            <tbody>
+            <>
             {data.slice(1).map((item, index) => (
-                <tr key={index}>
+                <div className="table__row" key={index}>
                     {Object.keys(item).map((field, idx) => (
-                        <td key={idx}>
+                        <div className="table__data" key={idx}>
                             {item[field]}
-                        </td>
+                        </div>
                     ))}
-                </tr>
+                </div>
             ))}
-            </tbody>
+            </>
         );
     };
 
@@ -41,10 +43,10 @@ const DataViewerScreen = ({data, onReset}) => {
     return (
         <div className="app-viewer">
             <button className="app-viewer__btn main-btn" onClick={onReset}>Загрузить новый файл</button>
-            <table className="app-viewer__table">
+            <div className="app-viewer__table table">
                 {renderTableHeader()}
                 {renderTableBody()}
-            </table>
+            </div>
         </div>
     );
 
@@ -60,4 +62,4 @@ DataViewerScreen.defaultProps = {
         console.log("onReset not passed");
     },
 }
-export default DataViewerScreen;
+export default React.memo(DataViewerScreen);

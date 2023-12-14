@@ -10,10 +10,9 @@
 }
 
 .app-viewer__btn {
-    margin-top: 2%;
+    margin-top: 1.5%;
     margin-right: 1%;
-
-    margin-bottom: 2%;
+    margin-bottom: 1.5%;
 }
 
 .app-viewer__table {
@@ -23,55 +22,55 @@
     background-color: white;
     border-collapse: collapse;
     width: 95%;
-    flex: 1;
 }
-.app-viewer__table tr {
+
+.app-viewer__table .table__row {
     display: flex;
     transition: background-color var(--animation-time) ease;
 }
 
-.app-viewer__table th,
-.app-viewer__table td {
+.app-viewer__table .table__head,
+.app-viewer__table .table__data {
     padding: 10px 10px 10px 20px;
     font-weight: normal;
+    overflow: auto;
     white-space: nowrap;
-    overflow: hidden;
     text-overflow: ellipsis;
     flex: 1;
 }
 
 /*name*/
-.app-viewer__table th:nth-child(1),
-.app-viewer__table td:nth-child(1) {
+.app-viewer__table .table__head:first-child,
+.app-viewer__table .table__data:first-child {
     flex: 4;
 }
 /*phone*/
-.app-viewer__table th:nth-child(2),
-.app-viewer__table td:nth-child(2) {
+.app-viewer__table .table__head:nth-child(2),
+.app-viewer__table .table__data:nth-child(2) {
     flex: 2;
 }
-.app-viewer__table th:nth-child(3),
-.app-viewer__table td:nth-child(3) {
+.app-viewer__table .table__head:nth-child(3),
+.app-viewer__table .table__data:nth-child(3) {
     flex: 3;
 }
-.app-viewer__table th:nth-child(4),
-.app-viewer__table td:nth-child(4) {
+.app-viewer__table .table__head:nth-child(4),
+.app-viewer__table .table__data:nth-child(4) {
     flex: 2;
 }
 /*address*/
-.app-viewer__table th:nth-child(5),
-.app-viewer__table td:nth-child(5) {
+.app-viewer__table .table__head:last-child,
+.app-viewer__table .table__data:last-child {
     flex: 5;
 }
 
-.app-viewer__table th {
+.app-viewer__table .table__head {
     border-bottom: 2px solid var(--thead-border-bottom-color);
     border-right: 1px solid var(--other-case-border-color);
 }
 
-.app-viewer__table td {
+.app-viewer__table .table__data {
     border-bottom: 1px solid var(--other-case-border-color);
 }
-.app-viewer__table tbody tr:not(:last-child):hover{
+.app-viewer__table .table__row:not(:first-child):hover{
     background-color: var(--hover-color);
 }
