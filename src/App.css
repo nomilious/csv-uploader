@@ -16,11 +16,18 @@
     --figma-button-margin-top: 75;
     --animation-time: 0.3s;
 }
-
+body {
+    background-color: var(--background-color);
+    font-family: 'Noto Sans', sans-serif !important;
+}
 .main-btn {
     background-color: var(--default-colorr);
     transition: background-color var(--animation-time) ease;
-
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 8px 16px;
 }
 .main-btn:hover {
     background-color: var(--hover-color);

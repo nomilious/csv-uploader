@@ -21,6 +21,9 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm coverage`
 
-Launches the test runner \
-using `react-scripts test --coverage --watchAll`. \
-This command activates the test runner in an interactive watch mode, allowing you to continually monitor and modify your tests. For more detailed information on running tests, you can refer to the [running tests](https://facebook.github.io/create-react-app/docs/running-tests) section in the official documentation.
+Launches the test runner using `react-scripts test --coverage --watchAll`. 
+This command activates the test runner in an interactive watch mode, 
+allowing you to continually monitor and modify your tests. For more 
+detailed information on running tests, you can refer to the 
+[running tests](https://facebook.github.io/create-react-app/docs/running-tests) 
+section in the official documentation.

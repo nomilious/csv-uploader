@@ -2,7 +2,6 @@ const transformText = (text) => {
     // split by new line
     const rows = text.replaceAll('\r\n', "\n").split("\n");// because of different end on macOs and Windows
 
-
     // to parse right: split by address, then split the part before it by commas
     return rows.map(row => {
         const parts = row.split('"'); // Split by address

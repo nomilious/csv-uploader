@@ -1,8 +1,3 @@
-body {
-    background-color: var(--background-color);
-    font-family: 'Noto Sans', sans-serif !important;
-}
-
 .app-main {
     display: flex;
     justify-content: center;
@@ -34,16 +29,9 @@ body {
     display: none;
 }
 .app-main__btn {
-    background-color: var(--default-colorr);
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
+    margin-top: 5%;
     min-width: calc(var(--figma-button-width) / var(--figma-width) * 100vmax);
     min-height: calc(var(--figma-button-height) / var(--figma-height) * 100vmin);
-    margin-top: 5%;
-
 }
 
 .app-main__error {
